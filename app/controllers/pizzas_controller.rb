@@ -3,4 +3,5 @@ class PizzasController < ApplicationController
         pizzas = Pizza.all 
         render json: pizzas, status: :ok
     end
+    
 end
