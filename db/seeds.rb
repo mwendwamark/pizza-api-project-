@@ -21,9 +21,12 @@ end
     ingredients: Array.new(10) { Faker::Food.ingredient }.join(","),
   )
 end
-# 40.times do
-#   RestaurantPizza.create(
-#     id: Faker::
-#   )
-# end
+70.times do
+  RestaurantPizza.create(
+    price: Faker::Number.between(from: 1, to: 30),
+    pizza_id: Faker::Number.between(from: 1, to: 30),
+    restaurant_id: Faker::Number.between(from: 1, to: 25),
+  )
+end
+
 puts "Done seeding."
