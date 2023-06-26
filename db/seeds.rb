@@ -5,20 +5,25 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require 'faker'
+require "faker"
 
 puts "Seeding pizza ...."
 
 25.times do
   Restaurant.create(
     name: Faker::Restaurant.name,
-    address: "#{Faker::Address.building_number} #{Faker::Address.street_address}, #{Faker::Address.street_name}"
-  )
-  
-  Pizza.create(
-    name: Faker::Food.dish,
-    ingredients: Array.new(3) { Faker::Food.ingredient }.join(",")
+    address: "#{Faker::Address.building_number}, #{Faker::Address.street_address}, #{Faker::Address.street_name}",
   )
 end
-
+30.times do
+  Pizza.create(
+    name: Faker::Food.dish,
+    ingredients: Array.new(10) { Faker::Food.ingredient }.join(","),
+  )
+end
+# 40.times do
+#   RestaurantPizza.create(
+#     id: Faker::
+#   )
+# end
 puts "Done seeding."

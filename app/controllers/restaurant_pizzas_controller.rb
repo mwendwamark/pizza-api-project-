@@ -9,8 +9,8 @@ class RestaurantPizzasController < ApplicationController
 
   def create
     restaurant_pizza = RestaurantPizza.create!(restaurant_pizza_params)
-    pizza = Pizza.find_by(id: params[:id])
-    render json: pizza, status: :created
+    # pizza = Pizza.find_by(id: params[:id])
+    render json: restaurant_pizza.pizza, status: :created
   end
 
   private
